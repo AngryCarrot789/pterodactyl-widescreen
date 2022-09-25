@@ -1,0 +1,29 @@
+{
+    "name": "Pterodactyl Widescreen",
+    "version": "0.0.0.1",
+    "manifest_version": 2,
+    "description": "An extension to allow the Pterodactyl panel's width stretch your browser's width",
+    "author": "REghZy",
+    "icons": {
+        "128": "icons/icon.png"
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs", "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "match_about_blank": true,
+            "run_at": "document_idle",
+            "matches": [
+                "https://my.pterodactyl.console/*"
+            ],
+            "js": [
+                "js/main.js"
+            ]
+        }
+    ]
+}
